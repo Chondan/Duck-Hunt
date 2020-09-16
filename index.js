@@ -126,12 +126,12 @@
         gun.currentTime = 0;
         gun.play();
         if (bullet == 0) {
+            isOver = true;
             new Promise((resolve, reject) => {
                 setTimeout(() => { resolve() }, 2000);
             }).then(() => {
                 if (!isWin) {
                     console.log("You lose");
-                    isOver = true;
                     gameOver();
                 }
             });
@@ -176,8 +176,7 @@
         duckElems.forEach( ({ duck, duckElem }) => {
             duckElem.interval = setInterval(() => moveDuck(duckElem, duck), 100);
             // shot event
-            duckElem.addEventListener('click', shotDuck.bind(null, duckElem, duck));
-            
+            duckElem.addEventListener('click', shotDuck.bind(null, duckElem, duck));            
         });
         // click event
         document.body.addEventListener('click', handleClick);
