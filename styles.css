@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+body {
+    background-image: url("./assets/images/scene/back/0.png");
+    background-color: lightblue;
+    background-repeat: repeat-x;
+    background-attachment: fixed;
+    background-position: bottom;
+    cursor: crosshair;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+.duck {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    background-repeat: no-repeat;
+}
+.win {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 15%;
+    opacity: 0;
+    animation: blink 0.5s infinite;
+}
+#timer {
+    position: absolute;
+    top: 0;
+    margin: 20px;
+}
+@keyframes blink {
+    to { opacity: 0; }
+}
+ul {
+    margin: 20px;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+    width: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+ul li {
+    display: inline-block;
+}
